@@ -12,13 +12,21 @@
 
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   </form>
-</body> -->
+</body>
 <%= form_tag '/users', method: :POST do %>
 <%= label_tag :username %>
 <%= text_field_tag('user[username]') %>
 <%= label_tag :password %>
-<%= text_field_tag('user[password]') %>
+<%= password_field_tag('user[password]') %>
 <%= label_tag :email %>
 <%= text_field_tag('user[email]') %>
 <%= submit_tag 'Submit' %>
+<% end %>
+-->
+
+<%= form_for(User.new) do |f| %>
+  User name: <%= f.text_field :username, placeholder: 'Put your name here' %> <br>
+  Email: <%= f.email_field :email, placeholder: 'someemail@example.com'%> <br>
+  Password: <%= f.password_field :password%> <br>
+  <%= f.submit value: 'Submit' %>
 <% end %>
