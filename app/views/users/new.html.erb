@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Form</title>
+  </head>
+  <body>
+  <form accept-charset="UTF-8" action="/users" method="POST">
+    <label for="iuser_name">User name</label>
+    <input type="text" name="iuser_name" id="iuser_name">
+
+    <label for="iemail">email</label>
+    <input type="text" name="iemail" id="iemail">
+
+    <label for="ipassword">password</label>
+    <input type="password" name="ipassword" id="ipassword">
+
+    <input type="submit" value="Submit">
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  </form>
+</body>
