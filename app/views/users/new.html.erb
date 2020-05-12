@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" >
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Form</title>
-  </head>
-  <body>
-  <form accept-charset="UTF-8" action="/users" method="POST">
+ <!--<form accept-charset="UTF-8" action="/users" method="POST">
     <label for="username">User name</label>
     <input type="text" name="user[username]" id="username">
 
@@ -19,4 +12,13 @@
 
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   </form>
-</body>
+</body> -->
+<%= form_tag '/users', method: :POST do %>
+<%= label_tag :username %>
+<%= text_field_tag('user[username]') %>
+<%= label_tag :password %>
+<%= text_field_tag('user[password]') %>
+<%= label_tag :email %>
+<%= text_field_tag('user[email]') %>
+<%= submit_tag 'Submit' %>
+<% end %>
