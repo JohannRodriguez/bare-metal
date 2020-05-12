@@ -1,0 +1,5 @@
+{
+  "name": "bare-metal",
+  "private": true,
+  "dependencies": {}
+}
