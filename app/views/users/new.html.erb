@@ -22,8 +22,7 @@
 <%= text_field_tag('user[email]') %>
 <%= submit_tag 'Submit' %>
 <% end %>
--->
-
+-->Create new user
 <%= form_for(User.new) do |f| %>
   User name: <%= f.text_field :username, placeholder: 'Put your name here' %> <br>
   Email: <%= f.email_field :email, placeholder: 'someemail@example.com'%> <br>
