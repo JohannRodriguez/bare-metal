@@ -1,0 +1,7 @@
+change existing user
+<%= form_for @user do |f| %>
+  User name: <%= f.text_field :username, placeholder: 'Put your name here' %> <br>
+  Email: <%= f.email_field :email, placeholder: 'someemail@example.com'%> <br>
+  Password: <%= f.password_field :password%> <br>
+  <%= f.submit value: 'Submit' %>
+<% end %>

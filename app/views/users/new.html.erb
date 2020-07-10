@@ -1,22 +1,31 @@
-<!DOCTYPE html>
-<html lang="en" >
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Form</title>
-  </head>
-  <body>
-  <form accept-charset="UTF-8" action="/users" method="POST">
-    <label for="iuser_name">User name</label>
-    <input type="text" name="iuser_name" id="iuser_name">
+ <!--<form accept-charset="UTF-8" action="/users" method="POST">
+    <label for="username">User name</label>
+    <input type="text" name="user[username]" id="username">
 
-    <label for="iemail">email</label>
-    <input type="text" name="iemail" id="iemail">
+    <label for="email">email</label>
+    <input type="text" name="user[email]" id="email">
 
-    <label for="ipassword">password</label>
-    <input type="password" name="ipassword" id="ipassword">
+    <label for="password">password</label>
+    <input type="password" name="user[password]" id="password">
 
     <input type="submit" value="Submit">
 
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   </form>
 </body>
+<%= form_tag '/users', method: :POST do %>
+<%= label_tag :username %>
+<%= text_field_tag('user[username]') %>
+<%= label_tag :password %>
+<%= password_field_tag('user[password]') %>
+<%= label_tag :email %>
+<%= text_field_tag('user[email]') %>
+<%= submit_tag 'Submit' %>
+<% end %>
+-->Create new user
+<%= form_for(User.new) do |f| %>
+  User name: <%= f.text_field :username, placeholder: 'Put your name here' %> <br>
+  Email: <%= f.email_field :email, placeholder: 'someemail@example.com'%> <br>
+  Password: <%= f.password_field :password%> <br>
+  <%= f.submit value: 'Submit' %>
+<% end %>
